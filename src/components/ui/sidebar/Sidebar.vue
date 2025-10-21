@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SidebarProps } from '.'
 import { cn } from '@/lib/utils'
-import { Sheet, SheetContent } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet'
 import { SIDEBAR_WIDTH_MOBILE, useSidebar } from './utils'
 
 defineOptions({
@@ -36,6 +36,10 @@ const { isMobile, state, openMobile, setOpenMobile } = useSidebar()
         '--sidebar-width': SIDEBAR_WIDTH_MOBILE,
       }"
     >
+      <SheetHeader class="px-6 pb-0 pt-4">
+        <SheetTitle>Menu</SheetTitle>
+        <SheetDescription>Abrir navegação</SheetDescription>
+      </SheetHeader>
       <div class="flex h-full w-full flex-col">
         <slot />
       </div>
